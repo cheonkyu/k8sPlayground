@@ -1,0 +1,15 @@
+---
+
+- hosts: master
+  become: yes
+  vars:
+     k8s_mode: "master"
+  roles:
+     - ansible-role-k8s
+
+- hosts: worker
+  become: yes
+  vars:
+     k8s_mode: "worker"
+  roles:
+     - ansible-role-k8s
